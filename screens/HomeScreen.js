@@ -27,12 +27,14 @@ export default class HomeScreen extends Component {
     onCollectionUpdate = (querySnapshot) => {
         const logs = [];
         querySnapshot.forEach((doc) => {
-            const {  date, severity, medicationTaken, notes } = doc.data();
+            const { date, severity, location, triggers, medicationTaken, notes } = doc.data();
             logs.push({
                 key: doc.id,
-                doc, 
+                doc,
                 date,
                 severity,
+                location,
+                triggers,
                 medicationTaken,
                 notes
             });
@@ -62,7 +64,7 @@ export default class HomeScreen extends Component {
                     >
                         <FontAwesome5 name="bars" size={30} color="#161924" />
                     </TouchableOpacity>}
-                    centerComponent={{ text: 'Headache Tracker', style: { color: '#fff', fontSize: 20 } }}
+                    centerComponent={{ text: 'Başağrısı Günlüğü', style: { color: '#fff', fontSize: 20 } }}
                     rightComponent={
 
                         <Button

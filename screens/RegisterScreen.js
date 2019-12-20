@@ -32,7 +32,7 @@ export default class RegisterScreen extends Component {
 
                 <View style={styles.form}>
                     <View>
-                        <Text style={styles.inputTitle}>Name</Text>
+                        <Text style={styles.inputTitle}>İsim</Text>
                         <TextInput
                             style={styles.input}
                             autoCapitalize="none"
@@ -52,7 +52,7 @@ export default class RegisterScreen extends Component {
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Password</Text>
+                        <Text style={styles.inputTitle}>Şifre</Text>
                         <TextInput
                             style={styles.input}
                             secureTextEntry
@@ -64,12 +64,12 @@ export default class RegisterScreen extends Component {
                 </View>
 
                 <TouchableOpacity style={styles.button} onPress={this.handleSignUp}>
-                    <Text style={{ color: "#FFF", fontWeight: "500" }}>Sign Up</Text>
+                    <Text style={{ color: "#FFF", fontWeight: "500" }}>Kaydol</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{ alignSelf: "center", marginTop: 32 }}>
                     <Text style={{ color: "#414959", fontSize: 13 }}>
-                        <Text style={{ fontWeight: "500", color: "#E9446A" }}>Sign In</Text>
+                        <Text style={{ fontWeight: "500", color: "#E9446A" }}>Giriş Yap</Text>
                     </Text>
                 </TouchableOpacity>
             </View>

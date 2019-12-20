@@ -20,12 +20,7 @@ import SideBar from "./components/SideBar";
 
 
 YellowBox.ignoreWarnings(['Setting a timer']);
-const _console = _.clone(console);
-console.warn = message => {
-    if (message.indexOf('Setting a timer') <= -1) {
-        _console.warn(message);
-    }
-};
+
 
 
 
@@ -41,21 +36,21 @@ const DrawerNavigator = createDrawerNavigator(
         Share: {
             screen: ShareScreen,
             navigationOptions: {
-                title: "Share",
+                title: "Paylaş",
                 drawerIcon: ({ tintColor }) => <Feather name="share" size={16} color={tintColor} />
             }
         },
         Home: {
             screen: HomeScreen,
             navigationOptions: {
-                title: "Logs",
+                title: "Kayıtlar",
                 drawerIcon: ({ tintColor }) => <Feather name="list" size={16} color={tintColor} />
             }
         },
         SignOut: {
             screen: LogoutScreen,
             navigationOptions: {
-                title: "Sign Out",
+                title: "Çıkış Yap",
                 drawerIcon: ({ tintColor }) => <Feather name="log-out" size={16} color={tintColor} />
             }
         }

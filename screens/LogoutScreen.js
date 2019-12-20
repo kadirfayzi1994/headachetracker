@@ -22,11 +22,10 @@ export default class LogoutScreen extends Component {
     };
 
     render() {
-        return (
-            // <Text>Hi {this.state.displayName}!</Text>
+        return (            
             < TouchableOpacity style={{ marginTop: 32, alignItems: 'center' }
             } onPress={this.signOutUser} >
-                <Text>Sign Out</Text>
+                <Text>Çıkış yap</Text>
             </TouchableOpacity>
         );
     }

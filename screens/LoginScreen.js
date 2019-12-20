@@ -38,7 +38,7 @@ export default class LoginScreen extends Component {
                     </View>
 
                     <View style={{ marginTop: 32 }}>
-                        <Text style={styles.inputTitle}>Password</Text>
+                        <Text style={styles.inputTitle}>Şifre</Text>
                         <TextInput
                             style={styles.input}
                             secureTextEntry
@@ -50,7 +50,7 @@ export default class LoginScreen extends Component {
                 </View>
 
                 <TouchableOpacity style={styles.button} onPress={this.handleLogin}>
-                    <Text style={{ color: "#FFF", fontWeight: "500" }}>Sign In</Text>
+                    <Text style={{ color: "#FFF", fontWeight: "500" }}>Giriş Yap</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -58,7 +58,7 @@ export default class LoginScreen extends Component {
                     onPress={() => this.props.navigation.navigate("Register")}
                 >
                     <Text style={{ color: "#414959", fontSize: 13 }}>
-                        <Text style={{ fontWeight: "500", color: "#E9446A" }}>Sign Up</Text>
+                        <Text style={{ fontWeight: "500", color: "#E9446A" }}>Kaydol</Text>
                     </Text>
                 </TouchableOpacity>
             </View>

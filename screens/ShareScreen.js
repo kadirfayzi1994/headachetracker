@@ -7,7 +7,7 @@ export default class ShareScreen extends Component {
         try {
             const result = await Share.share({
                 title: 'Subject',
-                message: 'React Native | A framework for building native apps using React',
+                message: 'Başağrısı Günlüğü Aylık Kayıtlar',
 
             });
 
@@ -26,6 +26,6 @@ export default class ShareScreen extends Component {
     };
 
     render() {
-        return <Button onPress={this.onShare} title="Share" />;
+        return <Button onPress={this.onShare} title="Paylaş" />;
     }
 }

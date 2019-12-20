@@ -7,7 +7,7 @@ import 'react-native-vector-icons';
 
 export default class DetailScreen extends Component {
     static navigationOptions = {
-        title: 'Details',
+        title: 'Detaylar',
     };
 
     constructor() {
@@ -29,8 +29,6 @@ export default class DetailScreen extends Component {
                     key: doc.id,
                     isLoading: false
                 });
-            } else {
-                console.log("No such document!");
             }
         });
     }
@@ -41,13 +39,11 @@ export default class DetailScreen extends Component {
             isLoading: true
         });
         firebase.firestore().collection('logs').doc(key).delete().then(() => {
-            console.log("Document successfully deleted!");
             this.setState({
                 isLoading: false
             });
             navigation.navigate('Home');
         }).catch((error) => {
-            console.error("Error removing document: ", error);
             this.setState({
                 isLoading: false
             });
@@ -71,10 +67,19 @@ export default class DetailScreen extends Component {
                                 <Text h4>{this.state.log.date}</Text>
                             </View>
                         </Card>
-
                         <Card>
                             <View>
-                                <Text h4> Severity - {this.state.log.severity}</Text>
+                                <Text h4> Şiddet - {this.state.log.severity}</Text>
+                            </View>
+                        </Card>
+                        <Card>
+                            <View>
+                                <Text h4> {this.state.log.location}</Text>
+                            </View>
+                        </Card>
+                        <Card>
+                            <View>
+                                <Text h4> {this.state.log.triggers}</Text>
                             </View>
                         </Card>
                         <Card>
@@ -93,7 +98,7 @@ export default class DetailScreen extends Component {
                             large
                             backgroundColor={'#CCCCCC'}
                             leftIcon={{ name: 'edit' }}
-                            title='Edit'
+                            title='Düzenle'
                             onPress={() => {
                                 this.props.navigation.navigate('Edit', {
                                     logkey: `${JSON.stringify(this.state.key)}`,
@@ -106,7 +111,7 @@ export default class DetailScreen extends Component {
                             backgroundColor={'#999999'}
                             color={'#FFFFFF'}
                             leftIcon={{ name: 'delete' }}
-                            title='Delete'
+                            title='Sil'
                             onPress={() => this.deleteLog(this.state.key)} />
                     </View>
                 </Card>
